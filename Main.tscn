@@ -1,0 +1,304 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Generate.gd" type="Script" id=2]
+[ext_resource path="res://KeyFramer.gd" type="Script" id=3]
+[ext_resource path="res://Music.gd" type="Script" id=4]
+[ext_resource path="res://Writer.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ImageTexture" id=10]
+
+[sub_resource type="ImageTexture" id=11]
+
+[sub_resource type="ImageTexture" id=12]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Fields" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -704.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="VBoxContainer" parent="Fields"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Generate" type="Button" parent="Fields"]
+margin_left = 24.0
+margin_top = 544.0
+margin_right = 296.0
+margin_bottom = 579.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Generate"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyFramer" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 320.0
+margin_right = 1.0
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LoadSong" type="Button" parent="KeyFramer"]
+margin_left = 520.0
+margin_top = 20.0
+margin_right = 688.0
+margin_bottom = 55.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Load Song"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="KeyFramer"]
+margin_left = 16.0
+margin_top = 20.0
+margin_right = 504.0
+margin_bottom = 55.0
+custom_styles/read_only = SubResource( 6 )
+align = 1
+editable = false
+placeholder_text = "Path To File"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="KeyFramer"]
+margin_left = 16.0
+margin_top = 86.0
+margin_right = 688.0
+margin_bottom = 568.0
+window_title = "Open a File"
+mode = 0
+access = 2
+current_dir = "/Mega/Music/Bpm_Calculated"
+current_file = "100_Follow_the_Beat.ogg"
+current_path = "/Mega/Music/Bpm_Calculated/100_Follow_the_Beat.ogg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="KeyFramer"]
+script = ExtResource( 4 )
+
+[node name="Beat" type="Label" parent="KeyFramer"]
+margin_left = 16.0
+margin_top = 71.0
+margin_right = 116.0
+margin_bottom = 85.0
+text = "Current Beat : 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pos" type="Label" parent="KeyFramer"]
+margin_left = 16.0
+margin_top = 88.0
+margin_right = 116.0
+margin_bottom = 102.0
+text = "Song Position : 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="KeyFramer"]
+margin_left = -296.0
+margin_top = 502.0
+margin_right = -168.0
+margin_bottom = 537.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stop" type="Button" parent="KeyFramer"]
+margin_left = -160.0
+margin_top = 502.0
+margin_right = -24.0
+margin_bottom = 537.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Stop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="KeyFramer"]
+margin_left = -296.0
+margin_top = 463.12
+margin_right = -24.0
+margin_bottom = 495.12
+custom_icons/grabber_disabled = SubResource( 10 )
+custom_icons/grabber_highlight = SubResource( 11 )
+custom_icons/grabber = SubResource( 12 )
+custom_styles/slider = SubResource( 9 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 8 )
+min_value = -50.0
+max_value = 0.0
+value = -6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="KeyFramer/HSlider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.341176, 0.341176, 0.341176, 1 )
+text = "Volume"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Writer" type="Panel" parent="KeyFramer"]
+margin_left = 16.0
+margin_top = 128.0
+margin_right = 241.0
+margin_bottom = 257.0
+custom_styles/panel = SubResource( 13 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add" type="Button" parent="KeyFramer/Writer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -41.0
+margin_right = -17.0
+margin_bottom = -9.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Add"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Beat" type="SpinBox" parent="KeyFramer/Writer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 208.0
+margin_bottom = 40.0
+rounded = true
+allow_greater = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="LineEdit" parent="KeyFramer/Writer"]
+margin_left = 16.0
+margin_top = 50.0
+margin_right = 208.0
+margin_bottom = 74.0
+placeholder_text = "Value"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="KeyFramer/HSlider" to="KeyFramer/Music" method="_on_HSlider_value_changed"]
+[connection signal="button_up" from="KeyFramer/Writer/Add" to="KeyFramer/Writer" method="_on_Add_button_up"]
