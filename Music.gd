@@ -48,13 +48,25 @@ func _process(_delta):
 
 		get_parent().get_node("Pos").text = "Song Position : %s" % song_position
 
-		var half_beat = int(song_position / (60.0/128.0))
+		var half_beat = int(song_position / (60.0/Data.bpm))
 		
 		if half_beat > last_half_beat:
 			song_position_beats = half_beat
 			get_parent().get_node("Beat").text = "Current Beat : %s" % song_position_beats
 
+		get_parent().get_node("Seeker").value = (song_position/ Data.song_length)
+
 		
 func _on_HSlider_value_changed(value:float):
 	print(value)
 	volume_db = value
+
+func skip_seek(index):
+	if !playing: return
+
+	var value = -3 if index == 0 else 3
+
+
+	var current_pos = get_playback_position()
+	seek(current_pos + value)
+

@@ -30,6 +30,7 @@ func load_ogg(path):
 
 func log_music_data():
 	print("Song length: %s" % $Music.stream.get_length())
+	Data.song_length = $Music.stream.get_length()
 	
 
 func control_music(param):
