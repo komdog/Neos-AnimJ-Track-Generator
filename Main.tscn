@@ -1,13 +1,14 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Generate.gd" type="Script" id=2]
 [ext_resource path="res://KeyFramer.gd" type="Script" id=3]
 [ext_resource path="res://Music.gd" type="Script" id=4]
 [ext_resource path="res://Writer.gd" type="Script" id=5]
+[ext_resource path="res://Seeker.gd" type="Script" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
@@ -19,7 +20,7 @@ bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
 bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+bg_color = Color( 0.027451, 0.027451, 0.027451, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 1 )
@@ -53,6 +54,12 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,10 +72,9 @@ __meta__ = {
 [node name="Fields" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -704.0
+margin_right = -480.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -84,10 +90,10 @@ __meta__ = {
 }
 
 [node name="Generate" type="Button" parent="Fields"]
-margin_left = 24.0
+margin_left = 16.0
 margin_top = 544.0
-margin_right = 296.0
-margin_bottom = 579.0
+margin_right = 304.0
+margin_bottom = 576.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 3 )
@@ -109,14 +115,13 @@ margin_right = 1.0
 custom_styles/panel = SubResource( 2 )
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="LoadSong" type="Button" parent="KeyFramer"]
-margin_left = 520.0
-margin_top = 20.0
-margin_right = 688.0
+margin_left = 296.0
+margin_top = 16.0
+margin_right = 464.0
 margin_bottom = 55.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
@@ -127,21 +132,19 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "Load Song"
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="LineEdit" type="LineEdit" parent="KeyFramer"]
 margin_left = 16.0
-margin_top = 20.0
-margin_right = 504.0
+margin_top = 16.0
+margin_right = 280.0
 margin_bottom = 55.0
 custom_styles/read_only = SubResource( 6 )
 align = 1
 editable = false
 placeholder_text = "Path To File"
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -184,10 +187,10 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="KeyFramer"]
-margin_left = -296.0
-margin_top = 502.0
+margin_left = -304.0
+margin_top = 495.0
 margin_right = -168.0
-margin_bottom = 537.0
+margin_bottom = 528.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 3 )
@@ -201,10 +204,10 @@ __meta__ = {
 }
 
 [node name="Stop" type="Button" parent="KeyFramer"]
-margin_left = -160.0
-margin_top = 502.0
-margin_right = -24.0
-margin_bottom = 537.0
+margin_left = -152.0
+margin_top = 496.0
+margin_right = -16.0
+margin_bottom = 528.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 3 )
@@ -218,10 +221,10 @@ __meta__ = {
 }
 
 [node name="HSlider" type="HSlider" parent="KeyFramer"]
-margin_left = -296.0
-margin_top = 463.12
-margin_right = -24.0
-margin_bottom = 495.12
+margin_left = -304.0
+margin_top = 448.0
+margin_right = -16.0
+margin_bottom = 480.0
 custom_icons/grabber_disabled = SubResource( 10 )
 custom_icons/grabber_highlight = SubResource( 11 )
 custom_icons/grabber = SubResource( 12 )
@@ -250,9 +253,9 @@ __meta__ = {
 
 [node name="Writer" type="Panel" parent="KeyFramer"]
 margin_left = 16.0
-margin_top = 128.0
-margin_right = 241.0
-margin_bottom = 257.0
+margin_top = 144.0
+margin_right = 464.0
+margin_bottom = 273.0
 custom_styles/panel = SubResource( 13 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -282,7 +285,7 @@ __meta__ = {
 [node name="Beat" type="SpinBox" parent="KeyFramer/Writer"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 208.0
+margin_right = 431.0
 margin_bottom = 40.0
 rounded = true
 allow_greater = true
@@ -293,12 +296,71 @@ __meta__ = {
 [node name="Value" type="LineEdit" parent="KeyFramer/Writer"]
 margin_left = 16.0
 margin_top = 50.0
-margin_right = 208.0
+margin_right = 431.0
 margin_bottom = 74.0
 placeholder_text = "Value"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BPM" type="SpinBox" parent="KeyFramer"]
+margin_left = 296.0
+margin_top = 72.0
+margin_right = 464.0
+margin_bottom = 104.0
+max_value = 999.0
+value = 120.0
+allow_greater = true
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrameList" type="ItemList" parent="KeyFramer"]
+margin_left = 16.0
+margin_top = 288.0
+margin_right = 464.0
+margin_bottom = 584.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seeker" type="ProgressBar" parent="KeyFramer"]
+margin_left = 16.0
+margin_top = 113.0
+margin_right = 368.0
+margin_bottom = 136.0
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+max_value = 1.0
+step = 0.0
+value = 0.5
+percent_visible = false
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="KeyFramer/Seeker"]
+margin_left = 360.0
+margin_top = -1.0
+margin_right = 401.0
+margin_bottom = 23.0
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Foward" type="Button" parent="KeyFramer/Seeker"]
+margin_left = 408.0
+margin_top = -1.0
+margin_right = 449.0
+margin_bottom = 23.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="value_changed" from="KeyFramer/HSlider" to="KeyFramer/Music" method="_on_HSlider_value_changed"]
 [connection signal="button_up" from="KeyFramer/Writer/Add" to="KeyFramer/Writer" method="_on_Add_button_up"]
+[connection signal="value_changed" from="KeyFramer/BPM" to="KeyFramer/Writer" method="_on_BPM_value_changed"]

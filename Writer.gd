@@ -7,7 +7,7 @@ func _on_Add_button_up():
 
 	print('Writing keyframe')
 
-	var seconds = $Beat.value * (60.0/128.0)
+	var seconds = $Beat.value * (60.0/Data.bpm)
 
 	Data.keyframes.append(
 		{
@@ -16,4 +16,9 @@ func _on_Add_button_up():
 		}
 	)
 
+	get_parent().get_node('FrameList').add_item("Time : %s | Value : %s" % [seconds,$Value.text])
+
 	print(Data.keyframes)
+
+func _on_BPM_value_changed(value):
+	Data.bpm = value
