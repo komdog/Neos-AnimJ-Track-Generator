@@ -4,12 +4,17 @@ onready var music = get_parent().get_node("Music")
 onready var frame_list = get_parent().get_node('FrameList')
 
 func _on_Add_button_up():
+
 	if $Beat.value < 0 : return
 	if $Value.text.empty() : return
 
 	print('Writing keyframe')
 
 	var seconds = $Beat.value * (60.0/Data.bpm)
+
+	for keyframe in Data.keyframes:
+		if keyframe['time'] == seconds:
+			return print("Keyframe already assigned")
 
 	Data.keyframes.append(
 		{
@@ -33,7 +38,14 @@ func _input(event):
 			key_assigned(2)
 
 func key_assigned(value):
+
+	
 	var seconds = Data.current_beat * (60.0/Data.bpm)
+
+	for keyframe in Data.keyframes:
+		if keyframe['time'] == seconds:
+			return print("Keyframe already assigned")
+
 
 	Data.keyframes.append(
 		{
