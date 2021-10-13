@@ -4,7 +4,6 @@ enum {STOP,PLAY}
 var pause_pos: float = 0
 
 var song_position = 0.0
-var song_position_beats = 0
 
 var last_half_beat : float = 0.0 
 
@@ -29,7 +28,7 @@ func control(param):
 		reset_UI()
 
 func reset_UI():
-	song_position_beats = 0
+	Data.current_beat = 0
 	last_half_beat = 0.0
 	get_parent().get_node("Beat").text = "Current Beat : 0"
 	get_parent().get_node("Pos").text = "Song Position : 0"
@@ -51,8 +50,8 @@ func _process(_delta):
 		var half_beat = int(song_position / (60.0/Data.bpm))
 		
 		if half_beat > last_half_beat:
-			song_position_beats = half_beat
-			get_parent().get_node("Beat").text = "Current Beat : %s" % song_position_beats
+			Data.current_beat = half_beat
+			get_parent().get_node("Beat").text = "Current Beat : %s" % Data.current_beat
 
 		get_parent().get_node("Seeker").value = (song_position/ Data.song_length)
 

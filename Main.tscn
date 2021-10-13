@@ -10,16 +10,16 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.470588, 0.470588, 0.470588, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.027451, 0.027451, 0.027451, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
@@ -30,13 +30,13 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="ImageTexture" id=10]
+[sub_resource type="ImageTexture" id=7]
 
-[sub_resource type="ImageTexture" id=11]
+[sub_resource type="ImageTexture" id=8]
 
-[sub_resource type="ImageTexture" id=12]
+[sub_resource type="ImageTexture" id=9]
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 16
 border_width_top = 16
@@ -44,20 +44,20 @@ border_width_right = 16
 border_width_bottom = 16
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.376471, 0.376471, 0.376471, 1 )
 
 [node name="Main" type="Control"]
@@ -94,9 +94,9 @@ margin_left = 16.0
 margin_top = 544.0
 margin_right = 304.0
 margin_bottom = 576.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -112,7 +112,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 320.0
 margin_right = 1.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 5 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -123,9 +123,9 @@ margin_left = 296.0
 margin_top = 16.0
 margin_right = 464.0
 margin_bottom = 55.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -191,9 +191,9 @@ margin_left = -304.0
 margin_top = 495.0
 margin_right = -168.0
 margin_bottom = 528.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -208,9 +208,9 @@ margin_left = -152.0
 margin_top = 496.0
 margin_right = -16.0
 margin_bottom = 528.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -225,12 +225,12 @@ margin_left = -304.0
 margin_top = 448.0
 margin_right = -16.0
 margin_bottom = 480.0
-custom_icons/grabber_disabled = SubResource( 10 )
-custom_icons/grabber_highlight = SubResource( 11 )
-custom_icons/grabber = SubResource( 12 )
-custom_styles/slider = SubResource( 9 )
-custom_styles/grabber_area_highlight = SubResource( 8 )
-custom_styles/grabber_area = SubResource( 8 )
+custom_icons/grabber_disabled = SubResource( 7 )
+custom_icons/grabber_highlight = SubResource( 8 )
+custom_icons/grabber = SubResource( 9 )
+custom_styles/slider = SubResource( 10 )
+custom_styles/grabber_area_highlight = SubResource( 11 )
+custom_styles/grabber_area = SubResource( 11 )
 min_value = -50.0
 max_value = 0.0
 value = -6.0
@@ -256,7 +256,7 @@ margin_left = 16.0
 margin_top = 144.0
 margin_right = 464.0
 margin_bottom = 273.0
-custom_styles/panel = SubResource( 13 )
+custom_styles/panel = SubResource( 12 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -270,9 +270,9 @@ margin_left = 16.0
 margin_top = -41.0
 margin_right = -17.0
 margin_bottom = -9.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -321,6 +321,7 @@ margin_left = 16.0
 margin_top = 288.0
 margin_right = 464.0
 margin_bottom = 584.0
+allow_rmb_select = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -330,8 +331,8 @@ margin_left = 16.0
 margin_top = 113.0
 margin_right = 368.0
 margin_bottom = 136.0
-custom_styles/fg = SubResource( 14 )
-custom_styles/bg = SubResource( 15 )
+custom_styles/fg = SubResource( 13 )
+custom_styles/bg = SubResource( 14 )
 max_value = 1.0
 step = 0.0
 value = 0.5
@@ -364,3 +365,4 @@ __meta__ = {
 [connection signal="value_changed" from="KeyFramer/HSlider" to="KeyFramer/Music" method="_on_HSlider_value_changed"]
 [connection signal="button_up" from="KeyFramer/Writer/Add" to="KeyFramer/Writer" method="_on_Add_button_up"]
 [connection signal="value_changed" from="KeyFramer/BPM" to="KeyFramer/Writer" method="_on_BPM_value_changed"]
+[connection signal="item_rmb_selected" from="KeyFramer/FrameList" to="KeyFramer/Writer" method="_on_FrameList_item_rmb_selected"]
